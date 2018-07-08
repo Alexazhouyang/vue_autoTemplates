@@ -43,24 +43,8 @@ export default {
       alert("please fill the empty")
     }
     },
-    addProduct() {
-      var name = this.productName;
-      var description = this.description;
-      if(name && description){
-      this.$http.post('/api/product/addProduct', {
-        productname: name,
-        description: description
-      },{
-      }).then((response) => {
-        console.log(response);
-        this.selectProduct();
-      })
-    }else{
-      alert("please fill the empty")
-    }
-    },
-    selectProduct() {
-      this.$http.get('/api/product/selectProduct').then((response) => {
+    selectUser() {
+      this.$http.get('/api/product/selectUser').then((response) => {
         console.log(response);
         this.list = response.body;
       }),response => {

@@ -4,6 +4,7 @@
 </el-container>
 </template>
 <script>
+
 export default {
   name: 'App',
   data(){
@@ -19,13 +20,6 @@ export default {
 </script>
 
 <style>
- #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-  margin-top: 60px;
- 
-}
+ @import "/assets/css/main.css";
+ @import "assets/css/color-dark.css";     /*深色主题*/
 </style>
