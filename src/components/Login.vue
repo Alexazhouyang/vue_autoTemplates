@@ -1,5 +1,5 @@
 <template>
-<div id="login" style="width:100%">   
+<div id="login" class="login-wrap" style="width:100%">   
 <el-card class="box-card" >
    <img src="../assets/logo.png"/>
    <h2>Login</h2>
@@ -51,9 +51,9 @@ export default {
 <style  scoped>
 #login{
    
-    margin: 0 10% ;
+    margin: 10% 10%;
     text-align: center;
-    background-color: #2c3e50;
+    background-color: #242f42;
 }
 a{
     color: #2c3e50;

@@ -1,83 +1,17 @@
 <template>
     <div class="header">
-        <div class="logo">登录管理系统</div>
-        <div class="user-info">
-            <el-dropdown trigger="click" @command="handleCommand">
-                <span class="el-dropdown-link">
-                    {{username}}
-                </span>
-                <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="userCenter">个人中心</el-dropdown-item>
-                    <el-dropdown-item command="loginout">退出</el-dropdown-item>
-                </el-dropdown-menu>
-            </el-dropdown>
-        </div>
+        <div class="page-banners activity-banner"><div class="stardust-carousel"><div class="stardust-carousel__item-list-wrapper"><ul class="stardust-carousel__item-list" style="width: 1400%; transform: translate(-1500px, 0px); transition: 500ms;"><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/Shopee-Bazaar-287-8-jul-29-col.70791?smtt=201.6422"><div><img src="https://cfshopeesg-a.akamaihd.net/file/8f61f1ac38a21253c781ec6b32ca2db6"></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/m/77flashsale?smtt=201.6431"><div><img src="https://cfshopeesg-a.akamaihd.net/file/79330c1918d417aff8ddcf3ede0fb784"></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/78-Electronics-Deals-col.67854?smtt=201.6437"><div><img src="https://cfshopeesg-a.akamaihd.net/file/1c091ad2da3342fb64c7e85d6826c377"></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/Online-Baby-Fair-Jul-Flash-Sale-col.68870?smtt=201.6404"><div><img src="https://cfshopeesg-a.akamaihd.net/file/b1322b468d25733004e2cd9dac1ab285"></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/Below-247.7-Flash-Sale-col.67861?smtt=201.6433"><div><img src="https://cfshopeesg-a.akamaihd.net/file/262e54f5ae304365c5c4ad493af8af03"></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/events3/code/1530025568/?smtt=201.6395"><div><img src="https://cfshopeesg-a.akamaihd.net/file/b79eb1131c5a8a784db182da4928dc64"></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/Weekend-Frenzy-287-8-jul-29-col.70792?smtt=201.6423"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/events3/code/211871033/?smtt=201.6414"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/m/bestelectronicbargains?smtt=201.6412"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/m/trendingbeautyproducts?smtt=201.6408"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/m/whd2-8july?smtt=201.6364"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/shopeesg?smtt=201.6407"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/Shopee-Bazaar-287-8-jul-29-col.70791?smtt=201.6422"><div><img></div></a></li><li class="stardust-carousel__item" style="width: 7.14286%;"><a class="page-banners__item" href="/m/77flashsale?smtt=201.6431"><div><img></div></a></li></ul></div><div class="stardust-carousel__arrow stardust-carousel__arrow--prev" style="opacity: 0; display: none;"><svg class="stardust-icon stardust-icon-arrow-left-bold" enable-background="new 0 0 13 20" viewBox="0 0 13 20"><path stroke="none" d="m4.2 10l7.9-7.9-2.1-2.2-9 9-1.1 1.1 1.1 1 9 9 2.1-2.1z"></path></svg></div><div class="stardust-carousel__arrow stardust-carousel__arrow--next" style="opacity: 0; display: none;"><svg class="stardust-icon stardust-icon-arrow-right-bold" enable-background="new 0 0 13 21" viewBox="0 0 13 21"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg></div><div class="stardust-carousel__dots"><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot stardust-carousel__dot--active"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div><div class="stardust-carousel__dot"></div></div></div></div>
     </div>
 </template>
 <script>
     export default {
         data() {
             return {
-                name: 'Alexa'
-            }
-        },
-        computed:{
-            username(){
-                let username = sessionStorage.getItem('ms_username');
-                return username ? username : this.name;
-            }
-        },
-        methods:{
-            handleCommand(command) {
-                if(command == 'loginout'){
-                    sessionStorage.removeItem('ms_username')
-                    sessionStorage.removeItem('ms_userId')
-                    this.$router.push('/login');
-                } else if (command == 'userCenter') {
-                    this.$router.push('/userCenter');
-                }
+                name: 'Alexa',
             }
         }
     }
 </script>
 <style scoped>
-    .header {
-        position: relative;
-        box-sizing: border-box;
-        width: 100%;
-        height: 70px;
-        font-size: 22px;
-        line-height: 70px;
-        color: #fff;
-    }
-    .header .logo{
-        float: left;
-        width:250px;
-        text-align: center;
-    }
-    .user-info {
-        float: right;
-        padding-right: 50px;
-        font-size: 16px;
-        color: #fff;
-    }
-    .user-info .el-dropdown-link{
-        position: relative;
-        display: inline-block;
-        padding-left: 50px;
-        color: #fff;
-        cursor: pointer;
-        vertical-align: middle;
-    }
-    .user-info .user-logo{
-        position: absolute;
-        left:0;
-        top:15px;
-        width:40px;
-        height:40px;
-        border-radius: 50%;
-    }
-    .el-dropdown-menu__item{
-        text-align: center;
-    }
+   
 </style>
