@@ -36,7 +36,7 @@ export default {
             }
           this.$http.post('/api/user/login',formData).then((response) => {
             console.log(response);
-            this.$router.push('./Home')
+            this.$router.push('./movie-show')
           // this.list = response.body;
         }).then(function(error) {
 			console.log(error);})

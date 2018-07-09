@@ -1,25 +1,34 @@
 <template>
-<div id="app">
-<router-view></router-view>
-</div>
+  <div id="app">
+    <keep-alive exclude="movieDetail,search,celebrity">
+      <router-view @hasLoad="hasLoad"></router-view>
+    </keep-alive>
+    <tab></tab>
+    <loading v-if="!loadingFlag"></loading>
+  </div>
 </template>
-<script>
 
-export default {
-  name: 'App',
-  data(){
-    return{
-      isCollapse: true,
-      user:'Alexa'
+<script type="text/ecmascript-6">
+  import Loading from 'base/loading/loading.vue';
+  import Tab from 'components/tab/tab.vue';
+  export default {
+    data() {
+      return {
+        loadingFlag: false
+      };
+    },
+    methods: {
+      hasLoad() {
+        this.loadingFlag = true;
+      }
+    },
+    components: {
+      Loading,
+      Tab
     }
-  },
-  methods:{
-     
-  }
-}
+  };
 </script>
 
-<style>
- @import "/assets/css/main.css";
- @import "assets/css/color-dark.css";     /*深色主题*/
+<style scoped lang="stylus" rel="stylesheet/stylus">
+
 </style>
