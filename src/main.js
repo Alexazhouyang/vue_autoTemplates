@@ -10,13 +10,6 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'normalize.css'
 import store from './vuex/store'
 
-import 'babel-polyfill';
-import VueLazyLoad from 'vue-lazyload'; // 图片懒加载
-import 'common/stylus/index.styl'; // 引入样式表
-Vue.use(VueLazyLoad, {
-  loading: require('./common/image/loading.gif')
-});
-
 Vue.use(ElementUI,{ size: 'small', zIndex: 3000 });
 Vue.use(VueResource);
 Vue.use(Vuex);
